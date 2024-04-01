@@ -1,0 +1,159 @@
+@import url("./assets/bootstrap/css/bootstrap.min.css");
+@import url("./assets/css/animate.css");
+@import url("./assets/css/cryptocoins.css");
+@import url("./assets/css/font-awesome.min.css");
+@import url("./assets/css/ionicons.min.css");
+@import url("./assets/css/magnific-popup.css");
+@import url("assets/css/responsive.css");
+@import url("./assets/css/spop.min.css");
+@import url("assets/color/theme.css");
+@import url("assets/css/style.css");
+@import url("./assets/owlcarousel/css/owl.carousel.min.css");
+@import url("./assets/owlcarousel/css/owl.theme.default.min.css");
+
+/* //CUSTOME STYLE */
+.div{
+    width: 200px;
+    height: 140px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 1em 1em;
+    display: flex;
+    flex-wrap: wrap;
+  padding: 1em;
+  text-align: center;
+}
+.coin2{
+  width: 300px;
+  animation: flip 2s infinite;
+}
+h4{
+    text-align: center;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.div_persons{
+    width: 70px;
+    position: absolute;
+    top: -25%;
+    border-bottom-left-radius: 19px;
+    border-bottom-right-radius: 19px;
+}
+
+.box{
+    width:50px;
+    height: 50px;
+    border-radius: 100%;
+}
+.new_icon_style{
+    display: flex;
+    align-items: center;
+}
+
+.new_font_size{
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+}
+.icon_color{
+    color: #fff;
+}
+
+.cound_time{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.inline_style_1{
+    left: 30%;
+}
+
+.inline_style_2{
+    left: 75%;
+}
+
+.new_color{
+    color: #fff;
+    font-size: 1..1rem;
+}
+.navbar-toggler{
+    display: none;
+}
+.navbar_ul{
+    flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+}
+.navbar_ul_collapse{
+    display: block;
+    background-color: red;
+
+}
+.video-container {
+    position: fixed;
+    top: 66%;
+    /* background-color: #fff; */
+    right: 1%;
+    width: 500px; /* Set the width to 300px */
+    height: 200px;
+    overflow: hidden;
+    border-radius:4px;
+    border: 5px solid #fff;
+    z-index:999;
+  }
+  
+  video {
+    width: 100%; /* Ensure the video fills the container */
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    margin-left: 300px; /* Adjust content positioning to prevent overlap with the video */
+  }
+  
+@media screen and (max-width:800px){
+    .video-container {
+        position: fixed;
+        top: 66%;
+        /* background-color: #fff; */
+        right: 1%;
+        width: 300px; /* Set the width to 300px */
+        height: 200px;
+        overflow: hidden;
+        border-radius:4px;
+        border: 5px solid #fff;
+        z-index:999;
+      }
+}
+@media screen and (max-width:1225px){
+    .navbar-toggler{
+        display: block;
+    }
+    /* .navbar-nav {
+        animation-name: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.6);
+        float: left;
+        text-align: center;
+        width: 50%;
+      } */
+    /* .navbar_ul{
+     display: none;
+    } */
+}
+@media screen and (max-width:600px){
+    .new_image_css{
+        width: 50%;
+        height: auo;
+    }
+}
+
