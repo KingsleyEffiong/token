@@ -29,7 +29,7 @@ const TokenSale = ({buyToken, tokenSale}) => {
               Starting Phase 1:
             </h6>
             <p className="animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-            March 29, 2024 (FRIDAY 9.00AM (EST))
+            Apirl 4th, 2024 (THURSDAY 9.00AM (EST))
         </p>
           </div>
           <div className="pr_box">
@@ -37,7 +37,7 @@ const TokenSale = ({buyToken, tokenSale}) => {
            Ending Phase 1:
             </h6>
             <p className="animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-            Apirl 29, 2024 (FRIDAY 9.00AM (EST))
+            May 4th, 2024 (SATURDAY 9.00AM (EST))
         </p>
           </div>
           <div className="pr_box">
@@ -45,7 +45,7 @@ const TokenSale = ({buyToken, tokenSale}) => {
               Token exchange rate
             </h6>
             <p className="animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-            1 ETH = 34,000 MTT
+            1 Bnb = 5,600 MTT
         </p>
           </div>
         </div>
@@ -83,11 +83,15 @@ const TokenSale = ({buyToken, tokenSale}) => {
                 Buy Tokens <BsArrowRight/>
               </a>
               <ul className="icon_list list_none d-flex justify-content-center">
-                <li className="animation" data-animation="fadeInUp" data-animation-delay="0.5s">
+                {/* <li className="animation" data-animation="fadeInUp" data-animation-delay="0.5s">
                   <FaEthereum/>
-                </li>
+                </li> */}
                 <li className="animation" data-animation="fadeInUp" data-animation-delay="0.5s">
-                  <BsCurrencyBitcoin/>
+                <span className="new_icon_style">
+                    <img src="assets/images/bnb.png" alt=""style={{
+                      width:'20px'
+                    }}/>  BNB
+                  </span>
                 </li>
               </ul>
             </div>
@@ -126,7 +130,7 @@ const TokenSale = ({buyToken, tokenSale}) => {
               ACCEPTANCE CURRENCY
             </h6>
             <p className="animation" data-animation="fadeInUp" data-animation-delay="0.2s">
-            BTC, ETH
+            BNB
         </p>
           </div>
         </div>

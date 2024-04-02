@@ -25,15 +25,15 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
     };
   }, []);
 
+  const hideNavbar = () => {
+    setCollapsed(true);
+  };
+
   const MenuList = [
     {
       menu: "Home",
       link: '#home'
     },
-    // {
-    //   menu: "Our Services",
-    //   link: '#service'
-    // },
     {
       menu: "About",
       link: '#mountech_token'
@@ -50,7 +50,6 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
       menu: "RoadMap",
       link: '#roadmap'
     },
-
     {
       menu: 'Team',
       link: '#team',
@@ -59,10 +58,6 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
       menu: "Eco System",
       link: '#eco_system'
     },
-    // {
-    //   menu: "Staking",
-    //   link: '#staking'
-    // },
     {
       menu: "Our Policies",
       link: 'assets/images/Privacy policy .pdf'
@@ -94,7 +89,7 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
               <ul className="navbar-nav m-auto">
                 {MenuList.map((menu, i) => (
                   <li key={i + 1} className="animation" data-animation="fadeInDown" data-animation-delay={`1.${i + 1}s`}>
-                    <a href={menu.link} className="nav-link">{menu.menu}</a>
+                    <a href={menu.link} className="nav-link" onClick={hideNavbar}>{menu.menu}</a>
                   </li>
                 ))}
               </ul>

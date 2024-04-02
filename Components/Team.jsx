@@ -46,11 +46,12 @@ const Team = () => {
         <p style={{
               margin:"0"
             }}>Co-Founder</p>
-            <a href="https//www.facebook.com/realpeterbrooks?mibextid=LQQJ4d"></a> <FaFacebook style={{
+            <a href="https://www.facebook.com/realpeterbrooks?mibextid=LQQJ4d" target="blank"> <FaFacebook style={{
             fontSize:"20px",
               cursor:"pointer",
               cursor:"pointer"
             }}/> 
+            </a>
             </div>
           </div>
           <div className="div">

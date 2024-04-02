@@ -53,7 +53,7 @@ const Index = () => {
         <Footer/>
 
         <div className="video-container">
-  <video autoPlay loop controls={false}>
+  <video autoPlay loop controls>
     <source src="assets/images/mount tech video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>

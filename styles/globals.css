@@ -153,7 +153,19 @@ h4{
 @media screen and (max-width:600px){
     .new_image_css{
         width: 50%;
-        height: auo;
+        height: auto;
     }
+    .video-container {
+        position: fixed;
+        top: 80%;
+        /* background-color: #fff; */
+        right: 1%;
+        width: 200px; /* Set the width to 300px */
+        height: 150px;
+        overflow: hidden;
+        border-radius:4px;
+        border: 5px solid #fff;
+        z-index:999;
+      }
 }
 

@@ -67,7 +67,7 @@ const Banner = ({ transferNativeToken }) => {
                 >
                   <span className="new_icon_style">
                     <img src="assets/images/bnb.png" alt=""style={{
-                      width:'50px'
+                      width:'30px'
                     }}/>  BNB
                   </span>
                   <span></span>
