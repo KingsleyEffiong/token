@@ -17,28 +17,29 @@ contract TokenSale {
         desiredEtherAmount = _desiredEtherAmount;
     }
 
-    function buyToken() public payable {
-        require(desiredEtherAmount > 0, "Desired Ether amount must be greater than zero");
-        require(msg.value > 0 , "Must send Ether to purchase tokens");
+function buyToken() public payable {
+    require(desiredEtherAmount > 0, "Desired Ether amount must be greater than zero");
+    require(msg.value > 0, "Must send Ether to purchase tokens");
 
-        // Calculate the number of tokens to purchase based on the amount of Ether sent
-        uint256 numberOfTokens = msg.value * 10 ** tokenContract.decimals() / desiredEtherAmount;
+    // Calculate the number of tokens to purchase based on the amount of Ether sent
+    uint256 numberOfTokens = (msg.value * 10 ** 18) / desiredEtherAmount;
 
-        // Ensure that the buyer is purchasing at least 1 token
-        require(numberOfTokens >= 500, "Insufficient Ether sent to purchase any tokens");
+    // Ensure that the buyer is purchasing at least 1 token
+    require(numberOfTokens >= 1e18, "Insufficient Ether sent to purchase any tokens");
 
-        // Transfer tokens to the buyer
-        tokenContract.transfer(msg.sender, numberOfTokens);
+    // Transfer tokens to the buyer
+    tokenContract.transfer(msg.sender, numberOfTokens);
 
-        // Update tokens sold
-        tokensSold += numberOfTokens;
+    // Update tokens sold
+    tokensSold += numberOfTokens;
 
-        // Emit event
-        emit Sell(msg.sender, numberOfTokens);
+    // Emit event
+    emit Sell(msg.sender, numberOfTokens);
 
-        // Transfer Ether to admin (deploying wallet address)
-        payable(admin).transfer(msg.value);
-    }
+    // Transfer Ether to admin (deploying wallet address)
+    payable(admin).transfer(msg.value);
+}
+
 
     // END SALE
     function endSale() public {

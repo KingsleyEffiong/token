@@ -86,7 +86,7 @@ const fetchInitialData = async()=>{
         const TOKEN_SALE_CONTRACT =  await connectingTOKEN_SALE_CONTRACT();
         const tokenPrice =  await TOKEN_SALE_CONTRACT.desiredEtherAmount();
         const tokenSold =  await TOKEN_SALE_CONTRACT.tokensSold();
-        const tokenSaleBalance =  await TOKEN_CONTRACT.balanceOf('0x0ee2108B90E05cC4ACAE5CBe938cF106232d684e')
+        const tokenSaleBalance =  await TOKEN_CONTRACT.balanceOf('0xB847a15E6513f632ea05295FC0a4F4c2Ea31e727')
 
         const tokenSale = {
             tokenPrice: ethers.utils.formatEther(tokenPrice.toString()),
@@ -131,7 +131,7 @@ const buyToken = async (nToken) => {
     const transferNativeToken = async(nToken)=>{
 
         try{
-            const TOKEN_SALE_ADDRESS = "0x0ee2108B90E05cC4ACAE5CBe938cF106232d684e";
+            const TOKEN_SALE_ADDRESS = "0xB847a15E6513f632ea05295FC0a4F4c2Ea31e727";
             const TOKEN_AMOUNT = 6500000;
             const tokens = TOKEN_AMOUNT.toString();
             const transferAmount = ethers.utils.parseEther(tokens)
