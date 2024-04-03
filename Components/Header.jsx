@@ -29,6 +29,25 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
     setCollapsed(true);
   };
 
+  // Function to handle connecting to the wallet (MetaMask or Trust Wallet)
+  const handleConnectWallet = async () => {
+    try {
+      // Check if MetaMask is installed
+      if (typeof window.ethereum !== "undefined") {
+        // MetaMask is installed, connect to MetaMask
+        await connectWallet();
+      } else if (typeof window.trustWallet !== "undefined") {
+        // Trust Wallet is installed, connect to Trust Wallet
+        await connectWallet();
+      } else {
+        // Neither MetaMask nor Trust Wallet is installed
+        console.log("Neither MetaMask nor Trust Wallet is installed");
+      }
+    } catch (error) {
+      console.error("Wallet connection error:", error);
+    }
+  };
+
   const MenuList = [
     {
       menu: "Home",
@@ -107,7 +126,7 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
                       </small>
                     </a>
                   ) : (
-                    <a onClick={() => connectWallet()} className="btn btn-default btn-radius nav_item">
+                    <a onClick={handleConnectWallet} className="btn btn-default btn-radius nav_item">
                       <small className="new-color">
                         {""}
                         Connect Wallet
