@@ -8,7 +8,7 @@ contract MountTechSolution {
     address public ownerOfContract;
     uint256 public _userId;   
     
-    uint256 public decimals = 4;
+    uint256 public decimals = 18;
 
     address[] public holderToken;
 

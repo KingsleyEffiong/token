@@ -97,9 +97,9 @@ const fetchInitialData = async()=>{
         setTokenSale(tokenSale);
    
 
-        // console.log(tokenSale);  
-        // console.log(currentHolder);  
-        // console.log(nativeToken);  
+        console.log(tokenSale);  
+        console.log(currentHolder);  
+        console.log(nativeToken);  
     }catch(error){
         console.log(error);
     }

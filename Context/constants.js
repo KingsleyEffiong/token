@@ -6,11 +6,11 @@ import  MountTechSolution from "./MountTechSolution.json";
 import TokenSale from "./TokenSale.json";
 
 //TOKEN
-export const TOKEN_ADDRESS = "0x0C5F32C0a839941831AE1b8730DaE63F6C82cE87"
+export const TOKEN_ADDRESS = "0xfd6CF8b3943adB176E092248b762CF9fB517E446"
 export const TOKEN_ABI = MountTechSolution.abi;
 
 //TOKEN SALE
-export const TOKEN_SALE_ADDRESS = "0x0ee2108B90E05cC4ACAE5CBe938cF106232d684e";
+export const TOKEN_SALE_ADDRESS = "0x7D2F74e588e7c21B9Fad0B031F94fd93EA6F7D77";
 export const TOKEN_SALE_ABI = TokenSale.abi;
 
 

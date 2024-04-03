@@ -1,6 +1,6 @@
 import React from "react";
 
-const Service = () => {
+function Service(){
   const services = [
    {
     title:"Biometric Staff Management",

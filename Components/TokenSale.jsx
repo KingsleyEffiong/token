@@ -4,7 +4,7 @@ import { FaEthereum } from "react-icons/fa";
 import { SiRipple, SiLitecoin } from "react-icons/si";
 // import axios from 'axios'
 
-const TokenSale = ({buyToken, tokenSale}) => {
+function TokenSale ({buyToken, tokenSale}){
   const [nToken, setNToken] = useState(1);
   const   precentage = (tokenSale?.tokenSold/tokenSale?.tokenSaleBalance) *100;
   const  showPercentage = precentage.toString();

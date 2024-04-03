@@ -1,25 +1,23 @@
 const hre = require("hardhat");
 const { ethers } = hre;
-require('dotenv').config({path:'../.env'});
+require('dotenv').config({ path: '../.env' });
 
 async function main() {
-const privateKey = process.env.PRIVATE_KEY;
-const apiUrl = process.env.API_URL;
+    const privateKey = process.env.PRIVATE_KEY;
+    const apiUrl = process.env.API_URL;
 
-if(!privateKey){
-    throw new Error ('Private key not found in environment variables')
-}
-if(!apiUrl){
-    throw new Error ('API URL  not found in environment variables')
-}
+    if (!privateKey) {
+        throw new Error('Private key not found in environment variables');
+    }
+    if (!apiUrl) {
+        throw new Error('API URL not found in environment variables');
+    }
 
-
-    // Define the desired token price in USD
-    const desiredTokenPriceUSD = 0.00018; // $0.10
+    // Define the desired token price in BNB
+    const desiredTokenPriceBNB = 0.00018; // 0.00018 BNB
 
     // Convert the desired token price to wei
-    const desiredTokenPriceWei = ethers.utils.parseEther(desiredTokenPriceUSD.toString());
-    
+    const desiredEtherAmount = ethers.utils.parseUnits(desiredTokenPriceBNB.toString(), 'ether');
 
     // DEPLOY TOKEN CONTRACT
     const MountTechSolution = await hre.ethers.getContractFactory("MountTechSolution");
@@ -30,7 +28,7 @@ if(!apiUrl){
 
     // DEPLOY TOKEN SALE CONTRACT
     const TokenSale = await hre.ethers.getContractFactory("TokenSale");
-    const tokenSale = await TokenSale.deploy(mountTechSolution.address, desiredTokenPriceWei);
+    const tokenSale = await TokenSale.deploy(mountTechSolution.address, desiredEtherAmount);
     await tokenSale.deployed();
     console.log(`TokenSale: ${tokenSale.address}`);
 }
