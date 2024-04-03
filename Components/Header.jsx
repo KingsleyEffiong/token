@@ -35,11 +35,13 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
       // Check if MetaMask is installed
       if (typeof window.trustWallet !== "undefined") {
          // Trust Wallet is installed, connect to Trust Wallet
-         alert("Trust Wallet is installed, connect to Trust Wallet");
+         alert("Wallet is installed, connect Wallet");
+         const alert = document.createElement('div')
+        
         await connectWallet();
       } else if (typeof window.ethereum !== "undefined") {
        // MetaMask is installed, connect to MetaMask
-       alert("MetaMask is installed, connect to MetaMask");
+       alert("Wallet is installed, connect to Wallet");
         await connectWallet();
       } else {
         // Neither MetaMask nor Trust Wallet is installed
