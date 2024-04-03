@@ -33,18 +33,22 @@ const Header = ({ address, setAddress, connectWallet, showSidebar }) => {
   const handleConnectWallet = async () => {
     try {
       // Check if MetaMask is installed
-      if (typeof window.ethereum !== "undefined") {
-        // MetaMask is installed, connect to MetaMask
+      if (typeof window.trustWallet !== "undefined") {
+         // Trust Wallet is installed, connect to Trust Wallet
+         alert("Trust Wallet is installed, connect to Trust Wallet");
         await connectWallet();
-      } else if (typeof window.trustWallet !== "undefined") {
-        // Trust Wallet is installed, connect to Trust Wallet
+      } else if (typeof window.ethereum !== "undefined") {
+       // MetaMask is installed, connect to MetaMask
+       alert("MetaMask is installed, connect to MetaMask");
         await connectWallet();
       } else {
         // Neither MetaMask nor Trust Wallet is installed
         console.log("Neither MetaMask nor Trust Wallet is installed");
+        alert("Neither MetaMask nor Trust Wallet is installed");
       }
     } catch (error) {
       console.error("Wallet connection error:", error);
+      alert("Wallet connection error:");
     }
   };
 
