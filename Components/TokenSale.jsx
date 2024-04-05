@@ -67,7 +67,7 @@ function TokenSale ({buyToken, tokenSale}){
                   {showPercentage.slice(0,2)}%
                 </div>
                 <span className="progress_label bg-white inline_style_1">
-                  <strong> {Math.floor(tokenSale?.tokenSold / 10 ** 4)} MTT</strong>
+                  <strong> {tokenSale?.tokenSold} MTT</strong>
                 </span><br/>
                 <span className="progress_label bg-white inline_style_2">
                   <strong>{Math.floor(tokenSale?.tokenSaleBalance)}MTT</strong>

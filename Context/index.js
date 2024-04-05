@@ -54,15 +54,16 @@ const fetchInitialData = async()=>{
         const tokenAddress =  await TOKEN_CONTRACT.address;
 
         const nativeToken = {
-            tokenAddress:  tokenAddress,
+            tokenAddress: tokenAddress,
             tokenName: tokenName,
             tokenSymbol: tokenSymbol,
             tokenOwnerOfContract: tokenOwnerOfContract,
             tokenStandard: tokenStandard,
-            tokenTotalSupply: ethers.utils.formatEther(tokenTotalSupply.toString()),
+            tokenTotalSupply: ethers.utils.formatEther(tokenTotalSupply.toString()), // This may be fine if you want to show the total supply with decimals
             tokenBalance: ethers.utils.formatEther(tokenBalance.toString()),
             tokenHolders: tokenHolders.toNumber()
         };
+        
         setNativeToken(nativeToken);
 
         //GETTING TOKEN HOLDERS
@@ -84,9 +85,9 @@ const fetchInitialData = async()=>{
 
         //TOKEN SALE CONTRACT
         const TOKEN_SALE_CONTRACT =  await connectingTOKEN_SALE_CONTRACT();
-        const tokenPrice =  await TOKEN_SALE_CONTRACT.desiredEtherAmount();
+        const tokenPrice =  await TOKEN_SALE_CONTRACT.desiredBnbAmount();
         const tokenSold =  await TOKEN_SALE_CONTRACT.tokensSold();
-        const tokenSaleBalance =  await TOKEN_CONTRACT.balanceOf('0xB847a15E6513f632ea05295FC0a4F4c2Ea31e727')
+        const tokenSaleBalance =  await TOKEN_CONTRACT.balanceOf('0x3645cEe539de9E3880E1882257A714a8389F644C')
 
         const tokenSale = {
             tokenPrice: ethers.utils.formatEther(tokenPrice.toString()),
@@ -131,7 +132,7 @@ const buyToken = async (nToken) => {
     const transferNativeToken = async(nToken)=>{
 
         try{
-            const TOKEN_SALE_ADDRESS = "0xB847a15E6513f632ea05295FC0a4F4c2Ea31e727";
+            const TOKEN_SALE_ADDRESS = "0x3645cEe539de9E3880E1882257A714a8389F644C";
             const TOKEN_AMOUNT = 6500000;
             const tokens = TOKEN_AMOUNT.toString();
             const transferAmount = ethers.utils.parseEther(tokens)
